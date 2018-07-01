@@ -1,10 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * Generated use model class
+ *
+ * @author Fil <filjoseph22@gmail.com>
+ * @version 1.0.0
+ * @date July 1, 2018
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -26,4 +33,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function todo()
+    {
+      return $this->hasMany('App\Models\Todo');
+    }
 }
