@@ -34,6 +34,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * define a user to have many task
+     *
+     * @return object
+     */
     public function todo()
     {
       return $this->hasMany('App\Models\Todo');

@@ -22,6 +22,11 @@ class Todo extends Model
     'user_id', 'title', 'description', 'status'
   ];
 
+  /**
+   * define a task to have one user
+   *
+   * @return object
+   */
   public function user()
   {
     return $this->belongsTo('App\Models\User');
